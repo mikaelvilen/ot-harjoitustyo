@@ -1,1 +1,4 @@
 /laskarit/viikko2/unicafe/.pytest_cache
+.DS_Store
+/laskarit/viikko2/unicafe/.coverage
+/laskarit/viikko2/unicafe/htmlcov
