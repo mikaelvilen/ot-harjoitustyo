@@ -5,3 +5,5 @@
 [gitlog.txt](laskarit/viikko1/gitlog.txt)
 
 [Tuntikirjanpito](tuntikirjanpito.md)
+
+[Vaatimusmäärittely](laskarit/viikko1/vaatimusmaarittely.md)
