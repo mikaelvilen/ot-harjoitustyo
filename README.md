@@ -1,9 +1,4 @@
-# Projekti
-## Viikko 1
+# Pong
 
-[komentorivi.txt](laskarit/viikko1/komentorivi.txt)
-[gitlog.txt](laskarit/viikko1/gitlog.txt)
+Pong-tyylinen yhden pelaajan videopeli
 
-[Tuntikirjanpito](tuntikirjanpito.md)
-
-[Vaatimusmäärittely](laskarit/viikko1/vaatimusmaarittely.md)
