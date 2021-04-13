@@ -6,11 +6,14 @@ pygame.init()
 
 screen_size = width, height = 800, 600
 screen_color = (80, 160, 240)
+ball_radius = 10
+pad_width = 10
+pad_height = 100
 
 screen = pygame.display.set_mode(screen_size)
-ball = Ball((width / 2) - 5, (height / 2) - 5)
-player = Pad(10, (height / 2) - 50, 0)
-computer = Pad(width - 20, (height / 2) - 50, 0)
+ball = Ball((width / 2) - ball_radius / 2, (height / 2) - ball_radius / 2, ball_radius, 0)
+player = Pad(10, (height / 2) - 50, pad_width, pad_height, 0)
+computer = Pad(width - 20, (height / 2) - 50, pad_width, pad_height, 0)
 
 while True:
     for event in pygame.event.get():
@@ -27,8 +30,8 @@ while True:
             if event.key == pygame.K_DOWN:
                 player.velocity = 0
 
-    ball.rect = ball.rect.move([2, 2])
-    player.rect = player.rect.move([0, player.velocity])
+    ball.update(screen_size)
+    player.update(screen_size)
     screen.fill(screen_color)
     screen.blit(ball.image, ball.rect)
     screen.blit(player.image, player.rect)
