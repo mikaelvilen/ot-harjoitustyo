@@ -2,6 +2,12 @@
 
 Pong-tyylinen yhden pelaajan videopeli
 
+## Dokumentaatio
+
+[Vaatimusmäärittely](dokumentaatio/vaatimusmaarittely.md)
+
+[Tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
+
 ## Pelin testaaminen komentoriviltä
 
 1. ```bash

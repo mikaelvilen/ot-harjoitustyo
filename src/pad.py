@@ -1,5 +1,6 @@
 import pygame
 
+
 class Pad(pygame.sprite.Sprite):
     def __init__(self, x, y, width, height, velocity):
         pygame.sprite.Sprite.__init__(self)
@@ -19,4 +20,3 @@ class Pad(pygame.sprite.Sprite):
             self.rect.y = screen_size[1] - self.height
             self.velocity = 0
         self.rect = self.rect.move([0, self.velocity])
-        

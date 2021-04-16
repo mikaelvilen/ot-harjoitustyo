@@ -1,4 +1,5 @@
-import pygame, sys
+import sys
+import pygame
 from ball import Ball
 from pad import Pad
 
@@ -11,7 +12,8 @@ pad_width = 10
 pad_height = 100
 
 screen = pygame.display.set_mode(screen_size)
-ball = Ball((width / 2) - ball_radius / 2, (height / 2) - ball_radius / 2, ball_radius, 0)
+ball = Ball((width / 2) - ball_radius / 2, (height / 2) -
+            ball_radius / 2, ball_radius, -2, 0)
 player = Pad(10, (height / 2) - 50, pad_width, pad_height, 0)
 computer = Pad(width - 20, (height / 2) - 50, pad_width, pad_height, 0)
 
@@ -30,7 +32,12 @@ while True:
             if event.key == pygame.K_DOWN:
                 player.velocity = 0
 
-    ball.update(screen_size)
+    if pygame.Rect.colliderect(ball.rect, player.rect) or pygame.Rect.colliderect(ball.rect, computer.rect):
+        ball.velocity = [ball.velocity[0] * -1, ball.velocity[1] * -1]
+
+    
+
+    ball.update()
     player.update(screen_size)
     screen.fill(screen_color)
     screen.blit(ball.image, ball.rect)

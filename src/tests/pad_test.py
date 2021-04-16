@@ -1,6 +1,7 @@
 import unittest
 from pad import Pad
 
+
 class TestPad(unittest.TestCase):
     def setUp(self):
         self.pad = Pad(10, 250, 10, 100, 0)
