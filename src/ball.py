@@ -19,6 +19,10 @@ class Ball(pygame.sprite.Sprite):
 
     def check_collision_walls(self, screen_size):
         if self.rect.y < 0 or self.rect.y > screen_size[1]:
-            return True
+            return 2
+        if self.rect.x < 0:
+            return 1
+        if self.rect.x > screen_size[0]:
+            return 3
         else:
-            return False
+            return 0

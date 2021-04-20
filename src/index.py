@@ -14,8 +14,8 @@ PAD_HEIGHT = 100
 screen = pygame.display.set_mode(SCREEN_SIZE)
 ball = Ball((width / 2) - BALL_RADIUS / 2, (height / 2) -
             BALL_RADIUS / 2, BALL_RADIUS, -1, -1)
-player = Pad(10, (height / 2) - 50, PAD_WIDTH, PAD_HEIGHT, 0)
-computer = Pad(width - 20, (height / 2) - 50, PAD_WIDTH, PAD_HEIGHT, 0)
+player = Pad(0, (height / 2) - 50, PAD_WIDTH, PAD_HEIGHT, 0)
+computer = Pad(width - 10, (height / 2) - 50, PAD_WIDTH, PAD_HEIGHT, 0)
 
 while True:
     for event in pygame.event.get():
@@ -23,9 +23,9 @@ while True:
             sys.exit()
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
-                player.velocity = -4
+                player.velocity = -2
             if event.key == pygame.K_DOWN:
-                player.velocity = 4
+                player.velocity = 2
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_UP:
                 player.velocity = 0
@@ -35,8 +35,14 @@ while True:
     if ball.check_collision_pad(player.rect, computer.rect):
         ball.velocity[0] *= -1
 
-    if ball.check_collision_walls(SCREEN_SIZE):
-        ball.velocity[1] *= -1
+    if ball.check_collision_walls(SCREEN_SIZE) != 0:
+        if ball.check_collision_walls(SCREEN_SIZE) == 1:
+            ball.rect.x = width / 2
+            ball.rect.y = height / 2
+        if ball.check_collision_walls(SCREEN_SIZE) == 2:
+            ball.velocity[1] *= -1
+        if ball.check_collision_walls(SCREEN_SIZE) == 3:
+            pass
 
     computer.rect.y = ball.rect.y
 
