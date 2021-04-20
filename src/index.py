@@ -38,11 +38,7 @@ while True:
     if ball.check_collision_walls(SCREEN_SIZE):
         ball.velocity[1] *= -1
 
-    if ball.velocity[0] > 0:
-        if ball.velocity[1] < 0:
-            computer.velocity = -1
-        else:
-            computer.velocity = 1
+    computer.rect.y = ball.rect.y
 
     ball.update()
     player.update(SCREEN_SIZE)
