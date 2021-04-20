@@ -4,7 +4,7 @@
 
 Pong-tyylinen videopeli yhdelle pelaajalle.
 
-### Pelin käyttöliittymä
+### Pelin objektit
 
 * Peliruutu
 * Pelaajan ja vastustajan mailat
@@ -12,9 +12,9 @@ Pong-tyylinen videopeli yhdelle pelaajalle.
 * Pistelaskuri
 * High Scores -näkymä pelin jälkeen
 
-### Pelin kulku
+### Pelin toiminnallisuus
 
-* Pelaaja voi liikuttaa mailaa nuolinäppäimillä ylös tai alas.
+* Pelaaja voi liikuttaa mailaa nuolinäppäimillä ylös tai alas. (tehty)
 * Peli alkaa, kun pelaaja liikuttaa mailaa ensimmäisen kerran
 * Pelaaja saa pisteen, kun pallo menee vastustajan takarajan yli
 * Peli loppuu, jos vastustaja saa pisteen

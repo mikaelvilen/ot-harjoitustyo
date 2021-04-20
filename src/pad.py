@@ -2,13 +2,13 @@ import pygame
 
 
 class Pad(pygame.sprite.Sprite):
-    def __init__(self, x, y, width, height, velocity):
+    def __init__(self, pos_x, pos_y, width, height, velocity):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.Surface([width, height])
         self.image.fill((255, 255, 255))
         self.rect = self.image.get_rect()
-        self.rect.x = x
-        self.rect.y = y
+        self.rect.x = pos_x
+        self.rect.y = pos_y
         self.height = height
         self.velocity = velocity
 

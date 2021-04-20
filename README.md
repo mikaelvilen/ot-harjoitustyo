@@ -8,6 +8,8 @@ Pong-tyylinen yhden pelaajan videopeli
 
 [Tuntikirjanpito](dokumentaatio/tuntikirjanpito.md)
 
+[Arkkitehtuuri](dokumentaatio/arkkitehtuuri.md)
+
 ## Pelin testaaminen komentoriviltä
 
 1. ```bash
@@ -17,15 +19,20 @@ Pong-tyylinen yhden pelaajan videopeli
 
 2. ```bash
     poetry run invoke start
-   ````
+   ```
     Avaa pelisovelluksen
 
 3. ```bash
     poetry run invoke test
-   ````
+   ```
     Ajaa sovelluksen testit
 
 4. ```bash
     poetry run invoke coverage-report
-   ````
+   ```
     Kerää testien haarautumakattavuuden ja luo index.html raportin htmlcov hakemistoon
+
+5. ```bash
+    poetry run invoke lint
+   ```
+    Pylinter
