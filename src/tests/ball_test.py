@@ -15,9 +15,9 @@ class TestBall(unittest.TestCase):
         self.ball.rect.y = -1
         bottom = self.ball.check_collision_walls(self.screen_size)
         self.assertEqual((top, bottom), (True, True))
-    
+
     def test_ball_collides_with_pads(self):
         self.ball.rect.x = 0
         self.ball.rect.y = 0
-        self.assertEqual(self.ball.check_collision_pad(self.pad, self.pad), True)
-        
+        self.assertEqual(self.ball.check_collision_pad(
+            self.pad, self.pad), True)

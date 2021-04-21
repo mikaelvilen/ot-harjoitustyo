@@ -7,6 +7,7 @@ class Ball(pygame.sprite.Sprite):
         self.image = pygame.Surface([radius, radius])
         self.image.fill((255, 255, 255))
         self.rect = self.image.get_rect()
+        self.radius = radius
         self.rect.x = pos_x
         self.rect.y = pos_y
         self.velocity = [velocity_x, velocity_y]
@@ -18,7 +19,7 @@ class Ball(pygame.sprite.Sprite):
         return pygame.Rect.colliderect(self.rect, player_rect) or pygame.Rect.colliderect(self.rect, computer_rect)
 
     def check_collision_walls(self, screen_size):
-        if self.rect.y < 0 or self.rect.y > screen_size[1]:
+        if self.rect.y <= 0 or self.rect.y >= screen_size[1]:
             return 2
         if self.rect.x < 0:
             return 1
