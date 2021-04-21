@@ -34,16 +34,16 @@ class Gameloop:
     def _handle_collisions(self):
         if self.ball.check_collision_pad(self.player.rect, self.computer.rect):
                 self.ball.velocity[0] *= -1
-            if self.ball.check_collision_walls(self.screen_size) == 1:
-                self.ball.rect.x = self.screen_size[0] / 2 - (self.ball.radius / 2)
-                self.ball.rect.y = self.screen_size[1] / 2 - (self.ball.radius / 2)
-                self.ball.velocity = [0, 0]
-                self.score = 0
-                self.game_active = False
-            if self.ball.check_collision_walls(self.screen_size) == 2:
-                self.ball.velocity[1] *= -1
-            if self.ball.check_collision_walls(self.screen_size) == 3:
-                self.score += 1000
+        if self.ball.check_collision_walls(self.screen_size) == 1:
+            self.ball.rect.x = self.screen_size[0] / 2 - (self.ball.radius / 2)
+            self.ball.rect.y = self.screen_size[1] / 2 - (self.ball.radius / 2)
+            self.ball.velocity = [0, 0]
+            self.score = 0
+            self.game_active = False
+        if self.ball.check_collision_walls(self.screen_size) == 2:
+            self.ball.velocity[1] *= -1
+        if self.ball.check_collision_walls(self.screen_size) == 3:
+            self.score += 1000
 
     def _draw_screen(self):
         self.screen.fill(self.screen_color)
