@@ -31,6 +31,20 @@ class Gameloop:
                 if event.key == pygame.K_DOWN:
                     self.player.velocity = 0
 
+    def _handle_collisions(self):
+        if self.ball.check_collision_pad(self.player.rect, self.computer.rect):
+                self.ball.velocity[0] *= -1
+            if self.ball.check_collision_walls(self.screen_size) == 1:
+                self.ball.rect.x = self.screen_size[0] / 2 - (self.ball.radius / 2)
+                self.ball.rect.y = self.screen_size[1] / 2 - (self.ball.radius / 2)
+                self.ball.velocity = [0, 0]
+                self.score = 0
+                self.game_active = False
+            if self.ball.check_collision_walls(self.screen_size) == 2:
+                self.ball.velocity[1] *= -1
+            if self.ball.check_collision_walls(self.screen_size) == 3:
+                self.score += 1000
+
     def _draw_screen(self):
         self.screen.fill(self.screen_color)
         pygame.draw.line(self.screen, (255, 255, 255), ((self.screen_size[0] / 2) - 1, 0), ((self.screen_size[0] / 2) - 1, self.screen_size[1]), 2)
@@ -45,18 +59,7 @@ class Gameloop:
     def start(self):
         while True:
             self._handle_events()
-            if self.ball.check_collision_pad(self.player.rect, self.computer.rect):
-                self.ball.velocity[0] *= -1
-            if self.ball.check_collision_walls(self.screen_size) == 1:
-                self.ball.rect.x = self.screen_size[0] / 2 - (self.ball.radius / 2)
-                self.ball.rect.y = self.screen_size[1] / 2 - (self.ball.radius / 2)
-                self.ball.velocity = [0, 0]
-                self.game_active = False
-            if self.ball.check_collision_walls(self.screen_size) == 2:
-                self.ball.velocity[1] *= -1
-            if self.ball.check_collision_walls(self.screen_size) == 3:
-                self.score += 1000
-
+            self._handle_collisions()
             self.computer.rect.y = self.ball.rect.y
             self.ball.update()
             self.player.update(self.screen_size)
