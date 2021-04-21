@@ -20,7 +20,7 @@ class Gameloop:
             if event.type == pygame.KEYDOWN:
                 if not self.game_active:
                     self.game_active = True
-                    self.ball.velocity = [5, 5]
+                    self.ball.velocity = [10, 10]
                 if event.key == pygame.K_UP:
                     self.player.velocity = -10
                 if event.key == pygame.K_DOWN:
@@ -35,15 +35,15 @@ class Gameloop:
         if self.ball.check_collision_pad(self.player.rect, self.computer.rect):
                 self.ball.velocity[0] *= -1
         if self.ball.check_collision_walls(self.screen_size) == 1:
-            self.ball.rect.x = self.screen_size[0] / 2 - (self.ball.radius / 2)
-            self.ball.rect.y = self.screen_size[1] / 2 - (self.ball.radius / 2)
-            self.ball.velocity = [0, 0]
+            self.ball.center_ball(self.screen_size)
             self.score = 0
             self.game_active = False
         if self.ball.check_collision_walls(self.screen_size) == 2:
             self.ball.velocity[1] *= -1
         if self.ball.check_collision_walls(self.screen_size) == 3:
             self.score += 1000
+            self.ball.center_ball(self.screen_size)
+            self.game_active = False
 
     def _draw_screen(self):
         self.screen.fill(self.screen_color)
@@ -60,7 +60,7 @@ class Gameloop:
         while True:
             self._handle_events()
             self._handle_collisions()
-            self.computer.rect.y = self.ball.rect.y
+            self.computer.rect.y = self.ball.rect.y - self.computer.height / 2
             self.ball.update()
             self.player.update(self.screen_size)
             self.computer.update(self.screen_size)

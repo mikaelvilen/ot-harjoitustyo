@@ -14,6 +14,11 @@ class Ball(pygame.sprite.Sprite):
 
     def update(self):
         self.rect = self.rect.move(self.velocity)
+    
+    def center_ball(self, screen_size):
+        self.rect.x = screen_size[0] / 2 - (self.radius / 2)
+        self.rect.y = screen_size[1] / 2 - (self.radius / 2)
+        self.velocity = [0, 0]
 
     def check_collision_pad(self, player_rect, computer_rect):
         return pygame.Rect.colliderect(self.rect, player_rect) or pygame.Rect.colliderect(self.rect, computer_rect)
