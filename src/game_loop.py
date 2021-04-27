@@ -1,17 +1,16 @@
-import pygame
 import sys
+import pygame
+
 
 class Gameloop:
-    def __init__(self, screen, screen_size, screen_color, player, computer, ball):
+    def __init__(self, screen, py_display, player, computer, ball):
         self.screen = screen
-        self.screen_size = screen_size
-        self.screen_color = screen_color
         self.player = player
         self.computer = computer
         self.ball = ball
-        self.font = pygame.font.Font('src/assets/8bitOperatorPlus-Regular.ttf', 30)
         self.score = 0
         self.game_active = False
+        self.py_display = py_display
 
     def _handle_events(self):
         for event in pygame.event.get():
@@ -33,26 +32,36 @@ class Gameloop:
 
     def _handle_collisions(self):
         if self.ball.check_collision_pad(self.player.rect, self.computer.rect):
-                self.ball.velocity[0] *= -1
-        if self.ball.check_collision_walls(self.screen_size) == 1:
-            self.ball.center_ball(self.screen_size)
+            self.ball.velocity[0] *= -1
+            self.ball.velocity[0] *= 1.01
+            self.ball.velocity[1] *= 1.01
+            print(self.ball.velocity[1])
+        if self.ball.check_collision_walls(self.screen.size) == 1:
+            self.ball.center_ball(self.screen.size)
             self.score = 0
             self.game_active = False
-        if self.ball.check_collision_walls(self.screen_size) == 2:
+        if self.ball.check_collision_walls(self.screen.size) == 2:
             self.ball.velocity[1] *= -1
-        if self.ball.check_collision_walls(self.screen_size) == 3:
+        if self.ball.check_collision_walls(self.screen.size) == 3:
             self.score += 1000
-            self.ball.center_ball(self.screen_size)
+            self.ball.center_ball(self.screen.size)
             self.game_active = False
 
     def _draw_screen(self):
-        self.screen.fill(self.screen_color)
-        pygame.draw.line(self.screen, (255, 255, 255), ((self.screen_size[0] / 2) - 1, 0), ((self.screen_size[0] / 2) - 1, self.screen_size[1]), 2)
-        score_label = self.font.render('Score ' + str(self.score), 1, (255, 255, 255))
-        self.screen.blit(score_label, (50, 10))
-        self.screen.blit(self.ball.image, self.ball.rect)
-        self.screen.blit(self.player.image, self.player.rect)
-        self.screen.blit(self.computer.image, self.computer.rect)
+        self.py_display.fill(self.screen.color)
+        pygame.draw.line(self.py_display, (255, 255, 255), ((
+            self.screen.size[0] / 2) - 1, 0), (
+                (self.screen.size[0] / 2) - 1, self.screen.size[1]), 2)
+        score_label = self.screen.font.render(
+            'Score ' + str(self.score), 1, (255, 255, 255))
+        if not self.game_active:
+            new_game_label = self.screen.font.render(
+            'Press any key to play ', 1, (255, 255, 255))
+            self.py_display.blit(new_game_label, (235, 240))
+        self.py_display.blit(score_label, (100, 10))
+        self.py_display.blit(self.ball.image, self.ball.rect)
+        self.py_display.blit(self.player.image, self.player.rect)
+        self.py_display.blit(self.computer.image, self.computer.rect)
         pygame.display.flip()
         pygame.time.Clock().tick(60)
 
@@ -62,8 +71,8 @@ class Gameloop:
             self._handle_collisions()
             self.computer.rect.y = self.ball.rect.y - self.computer.height / 2
             self.ball.update()
-            self.player.update(self.screen_size)
-            self.computer.update(self.screen_size)
+            self.player.update(self.screen.size)
+            self.computer.update(self.screen.size)
             if self.game_active:
                 self.score += 1
             self._draw_screen()

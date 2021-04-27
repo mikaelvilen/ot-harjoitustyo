@@ -6,16 +6,16 @@ Pong-tyylinen videopeli yhdelle pelaajalle.
 
 ### Pelin objektit
 
-* Peliruutu
-* Pelaajan ja vastustajan mailat
-* Pallo
-* Pistelaskuri
+* Peliruutu (tehty)
+* Pelaajan ja vastustajan mailat (tehty)
+* Pallo (tehty)
+* Pistelaskuri (tehty)
 * High Scores -näkymä pelin jälkeen
 
 ### Pelin toiminnallisuus
 
 * Pelaaja voi liikuttaa mailaa nuolinäppäimillä ylös tai alas. (tehty)
-* Peli alkaa, kun pelaaja liikuttaa mailaa ensimmäisen kerran
-* Pelaaja saa pisteen, kun pallo menee vastustajan takarajan yli
-* Peli loppuu, jos vastustaja saa pisteen
+* Peli alkaa, kun pelaaja liikuttaa mailaa ensimmäisen kerran (tehty)
+* Pelaaja saa pisteitä pelissä selvitystä ajasta (tehty)
+* Peli loppuu, jos vastustaja saa pisteen (tehty)
 * Pelin lopuksi, jos pelaaja saa riittävästi pisteitä kysytään pelaajan nimeä, joka kirjataan pisteiden kanssa High Scores tauluun tietokantaan ja näytetään pelin lopuksi
