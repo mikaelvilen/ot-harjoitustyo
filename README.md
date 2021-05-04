@@ -18,21 +18,26 @@ Pong-tyylinen yhden pelaajan videopeli
     Asentaa tarvittavat riippuvuudet
 
 2. ```bash
+    poetry run invoke build
+   ```
+    Alustaa tietokannan
+
+3. ```bash
     poetry run invoke start
    ```
     Avaa pelisovelluksen
 
-3. ```bash
+4. ```bash
     poetry run invoke test
    ```
     Ajaa sovelluksen testit
 
-4. ```bash
+5. ```bash
     poetry run invoke coverage-report
    ```
     Kerää testien haarautumakattavuuden ja luo index.html raportin htmlcov hakemistoon
 
-5. ```bash
+6. ```bash
     poetry run invoke lint
    ```
     Pylinter

@@ -11,4 +11,5 @@
 | 21.4 | 5 | rakenteen parantelua, pistelaskuri ja pieniä parannuksia |
 | 22.4 | 2 | pylintin säätöä, rakenteen parantelua |
 | 27.4 | 2 | pallon liikkumisen parantelua, pientä säätöä |
-| Yht. | 23 | tuntia |
+| 4.5  | 7 | high scores näkymät ja tietokanta lisätty |
+| Yht. | 30 | tuntia |

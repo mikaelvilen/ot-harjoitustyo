@@ -10,7 +10,7 @@ Pong-tyylinen videopeli yhdelle pelaajalle.
 * Pelaajan ja vastustajan mailat (tehty)
 * Pallo (tehty)
 * Pistelaskuri (tehty)
-* High Scores -näkymä pelin jälkeen
+* High Scores -näkymä pelin jälkeen (tehty)
 
 ### Pelin toiminnallisuus
 
@@ -18,4 +18,4 @@ Pong-tyylinen videopeli yhdelle pelaajalle.
 * Peli alkaa, kun pelaaja liikuttaa mailaa ensimmäisen kerran (tehty)
 * Pelaaja saa pisteitä pelissä selvitystä ajasta (tehty)
 * Peli loppuu, jos vastustaja saa pisteen (tehty)
-* Pelin lopuksi, jos pelaaja saa riittävästi pisteitä kysytään pelaajan nimeä, joka kirjataan pisteiden kanssa High Scores tauluun tietokantaan ja näytetään pelin lopuksi
+* Pelin lopuksi, jos pelaaja saa riittävästi pisteitä kysytään pelaajan nimeä, joka kirjataan pisteiden kanssa High Scores tauluun tietokantaan ja näytetään pelin lopuksi (tehty)
