@@ -12,4 +12,5 @@
 | 22.4 | 2 | pylintin säätöä, rakenteen parantelua |
 | 27.4 | 2 | pallon liikkumisen parantelua, pientä säätöä |
 | 4.5  | 7 | high scores näkymät ja tietokanta lisätty |
-| Yht. | 30 | tuntia |
+| 4.5  | 2 | testien ihmettelyä |
+| Yht. | 32 | tuntia |

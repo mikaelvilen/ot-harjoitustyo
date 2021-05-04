@@ -21,3 +21,11 @@ class TestBall(unittest.TestCase):
         self.ball.rect.y = 0
         self.assertEqual(self.ball.check_collision_pad(
             self.pad, self.pad), 1)
+    
+    def test_ball_collides_with_player_wall(self):
+        self.ball.rect.x = -1
+        self.assertEqual(self.ball.check_collision_walls(self.screen_size), 1)
+
+    def test_ball_collides_with_computer_wall(self):
+        self.ball.rect.x = 801
+        self.assertEqual(self.ball.check_collision_walls(self.screen_size), 3)
