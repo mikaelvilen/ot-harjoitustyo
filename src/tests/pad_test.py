@@ -1,5 +1,5 @@
 import unittest
-from pad import Pad
+from sprites.pad import Pad
 
 
 class TestPad(unittest.TestCase):

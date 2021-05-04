@@ -1,6 +1,6 @@
 import unittest
-from ball import Ball
-from pad import Pad
+from sprites.ball import Ball
+from sprites.pad import Pad
 
 
 class TestBall(unittest.TestCase):
