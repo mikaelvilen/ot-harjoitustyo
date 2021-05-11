@@ -32,6 +32,18 @@ class TestGameloop(unittest.TestCase):
         self.game_loop._handle_events()
         self.assertEqual(self.ball.velocity, [10, 10])
 
+    def test_pad_moves_with_arrow_key_down(self):
+        event = pygame.event.Event(KEYDOWN, key=K_UP)
+        pygame.event.post(event)
+        self.game_loop._handle_events()
+        self.assertEqual(self.player.velocity, -10)
+
+    def test_pad_stops_with_arrow_key_up(self):
+        event = pygame.event.Event(KEYUP, key=K_UP)
+        pygame.event.post(event)
+        self.game_loop._handle_events()
+        self.assertEqual(self.player.velocity, 0)
+
     def test_game_ends_on_end_wall_collision(self):
         event = pygame.event.Event(KEYDOWN, key=13)
         pygame.event.post(event)

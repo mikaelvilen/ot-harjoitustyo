@@ -2,6 +2,14 @@ import pygame
 
 
 class Pad(pygame.sprite.Sprite):
+    """Class defines pad sprite
+
+    Attributes:
+        image: pygame surface, Needed for drawing object on the screen
+        rect: x and y coordinates for the pad
+        height: height of the pad
+        velocity: speed of the pad on the y axis
+    """
     def __init__(self, pos_x, pos_y, width, height, velocity):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.Surface([width, height])
@@ -13,6 +21,11 @@ class Pad(pygame.sprite.Sprite):
         self.velocity = velocity
 
     def update(self, screen_size):
+        """Moves the pad on the screen
+
+        Args:
+            screen_size: tuple, width and height of the screen
+        """
         if self.rect.y < 0:
             self.rect.y = 0
             self.velocity = 0

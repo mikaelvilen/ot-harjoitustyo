@@ -109,6 +109,8 @@ class Gameloop:
         pygame.time.Clock().tick(60)
 
     def start(self):
+        """Starts the game
+        """
         while True:
             self._draw_screen()
             if self.game_active:

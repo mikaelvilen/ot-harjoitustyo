@@ -13,4 +13,7 @@
 | 27.4 | 2 | pallon liikkumisen parantelua, pientä säätöä |
 | 4.5  | 7 | high scores näkymät ja tietokanta lisätty |
 | 4.5  | 2 | testien ihmettelyä |
-| Yht. | 32 | tuntia |
+| 4.5  | 2 | käyttöohjeen ja arkkitehtuurikuvauksen pohtimista ja työstämistä |
+| 10.5 | 2 | docstringejä, dokumentaatiota |
+| 11.5 | 1 | testausta |
+| Yht. | 37 | tuntia |
