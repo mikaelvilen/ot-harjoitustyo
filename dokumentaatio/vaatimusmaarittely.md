@@ -19,3 +19,7 @@ Pong-tyylinen videopeli yhdelle pelaajalle.
 * Pelaaja saa pisteitä pelissä selvitystä ajasta (tehty)
 * Peli loppuu, jos vastustaja saa pisteen (tehty)
 * Pelin lopuksi, jos pelaaja saa riittävästi pisteitä kysytään pelaajan nimeä, joka kirjataan pisteiden kanssa High Scores tauluun tietokantaan ja näytetään pelin lopuksi (tehty)
+
+### Toteutettavia toiminnallisuuksia
+
+* Pelin vaikeustason voi valita pelin alussa muuttamalla mailan kokoa
